@@ -1,4 +1,35 @@
 <html>
-<head></head>
-<body>Hello!</body>
+<head>
+	<script type="text/javascript">
+		window.onload = function() {
+			var path = window.location.pathname.split("/")
+			alert(path[0]);
+		}
+    </script>
+</head>
+<body>
+	<style>
+		.input{
+			height: 30px;
+			width: 50%;	
+		}
+		.center{
+			margin-top: 20%;
+			margin-left: 30%;
+		}
+		.button{
+			height: 30px;
+		}
+	</style>
+	<script>
+		function shorten() {
+			var x = document.getElementById("url").value;
+			alert(x);
+		}
+	</script>
+	<div class="center">
+		<input id="url" name="url" type="text" class="input" placeholder="Paste your link here" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
+		<button onclick="shorten()" id="btn" class="button">Submit</button>
+	</div>
+</body>
 </html>
