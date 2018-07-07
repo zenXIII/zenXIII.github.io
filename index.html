@@ -2,8 +2,20 @@
 <head>
 	<script type="text/javascript">
 		window.onload = function() {
-			var path = window.location.pathname.split("/")
-			alert(path[0]);
+			var queryString = location.search;
+			if (queryString.length > 0)
+			{
+				var request = new XMLHttpRequest();
+				request.open("GET", "db.json", false);
+				request.send(null)
+				var data = JSON.parse(request.responseText);
+				
+				for(i = 0; i < data.length; i++) {
+					alert(db[i]);
+					if (db[i].code == queryString)
+						window.location = db[i].origin;
+				}
+			}
 		}
     </script>
 </head>
